@@ -1,6 +1,5 @@
-import React , {useState , useEffect} from 'react';
-import axios from 'axios';
-import { Redirect, Route } from 'react-router';
+import React  from 'react';
+import { Route } from 'react-router';
 
 
 import Login from './Pages/Login';
