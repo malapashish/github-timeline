@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React , {useState , useEffect} from 'react';
+import axios from 'axios';
+import { Redirect, Route } from 'react-router';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import Login from './Pages/Login';
+import TimeLine from './Pages/TimeLine';
+
+const App = () => {
+    return(
+        <>
+        <Route exact path = '/' component = {() => <Login />} />
+        <Route path = '/timeline'  render = {(props) => <TimeLine {...props} />} />
+        </>
+    )
 }
 
 export default App;
