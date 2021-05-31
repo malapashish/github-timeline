@@ -9,11 +9,9 @@ const Login = () => {
     const [ error , setError ] = useState(null); 
 
     useEffect(() => { 
-        if(userName === ''){
-            
-        }else{
+        if(!(userName === '')){
         axios
-            .get(`https://api.github.com/users/${userName}/repos`)
+            .get(`https://api.github.com/users/${userName}/repos?Authorization=token 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`)
             .then((response) => { 
                 setData(response.data.sort((a , b) => {
                     return new Date(a.created_at) - new Date(b.created_at)
